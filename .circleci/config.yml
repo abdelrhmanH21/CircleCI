@@ -1,9 +1,10 @@
 version: 2.1
 jobs:
   print_name:
-    run:
-      name: "Display my name"
-      command: echo ${MY_NAME}
+    steps:
+      - run:
+          name: "Display my name"
+          command: echo ${MY_NAME}
   print_hello:
     docker:
       - image: circleci/node:13.8.0
