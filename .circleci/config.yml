@@ -2,23 +2,18 @@ version: 2.1
 
 commands:
   print_pipeline_id:
-    description: "Display Circle workflow Id on Screen"
-    parameters:
-      circleworkid:
-        tybe: number
-        default: $CIRCLE_WORKFLOW_ID
-    steps: 
-      - run: echo << parameters.circleworkid >>
+    steps : 
+      - run: echo {{$CIRCLE_WORKFLOW_ID}}
 
 jobs:
   myjob:
     docker:
       - image: "circleci/node:9.6.1"
-    steps:
+    steps :
       - print_pipeline_id
 
-workflows:
+workflows :
   myworkflow:
-    - build:
+    jobs:
       - myjob
 
