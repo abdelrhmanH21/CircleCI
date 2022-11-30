@@ -1,17 +1,24 @@
 version: 2.1
 
-workflows:
-  test-env-vars:
-    jobs:
-      - build
+commands:
+  print_pipeline_id:
+    description: "Display Circle workflow Id on Screen"
+    parameters:
+      circleworkid:
+        tybe: number
+        default: $CIRCLE_WORKFLOW_ID
+    steps: 
+      - run: echo << parameters.circleworkid >>
 
 jobs:
-  build:
+  myjob:
     docker:
-      - image: cimg/base:2020.01
+      - image: "circleci/node:9.6.1"
     steps:
-      - checkout
-      - run:
-          name: "Abdelrhman"
-          command: |
-            echo $CIRCLE_BRANCH
+      - print_pipeline_id
+
+workflows:
+  myworkflow:
+    - build:
+      - myjob
+
