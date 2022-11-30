@@ -12,6 +12,6 @@ jobs :
 workflows:
   my_workflow:
     jobs:
-      - my_jobs
+      - my_job
 
 
