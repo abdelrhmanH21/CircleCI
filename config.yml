@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "echo an env var that is part of our project"
+          name: "our project"
           command: |
             echo $CIRCLE_BRANCH
 
