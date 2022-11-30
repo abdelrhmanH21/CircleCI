@@ -3,7 +3,7 @@ version: 2.1
 commands:
   print_pipeline_id:
     steps : 
-      - run: echo {{$MY_NAME}}
+      - run: echo ${$MY_NAME}
 
 jobs:
   myjob:
