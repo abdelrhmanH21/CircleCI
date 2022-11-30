@@ -12,6 +12,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "echo var that is part of our project"
+          name: "Abdelrhman"
           command: |
             echo $CIRCLE_BRANCH
